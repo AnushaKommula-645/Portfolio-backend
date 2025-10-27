@@ -24,7 +24,7 @@ app.post('/contact', async (req, res) => {
   const mailOptions = {
     from: mail,
     to: process.env.SMTP_USER,
-    subject: `Message from ${name}`,
+    subject: `Message from ${name}-${mail}`,
     text: msg
   };
 
