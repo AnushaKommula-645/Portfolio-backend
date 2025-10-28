@@ -55,8 +55,8 @@ const PORT = process.env.PORT || 10000;
 app.use(
   cors({
     origin: [
-      "https://myportfolio-gamma-three-96.vercel.app/", // ← replace this with your deployed frontend URL
-      "http://localhost:5173", // for local React testing
+      "https://portfolio-er5vlfd0t-anushakommula-645s-projects.vercel.app", // for deployment testibg
+      "http://localhost:5173", // for local testing
     ],
     methods: ["POST", "GET"],
   })
@@ -93,14 +93,6 @@ app.post("/contact", async (req, res) => {
 
     // Send main email
     await transporter.sendMail(mailOptions);
-
-    // reply to the sender
-    // await transporter.sendMail({
-    //   from: process.env.SMTP_USER,
-    //   to: mail,
-    //   subject: "Thanks for reaching out!",
-    //   text: `Hi ${name},\n\nThank you for contacting me! I’ll get back to you soon.\n\n– Anusha Kommula`,
-    // });
 
     console.log("Emails sent successfully!");
     res.status(200).json({ message: "Message sent successfully!" });
