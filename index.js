@@ -51,16 +51,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-//Allow your frontend domain only (for security)
-app.use(
-  cors({
-    origin: [
-      "https://portfolio-er5vlfd0t-anushakommula-645s-projects.vercel.app", // for deployment testibg
-      "http://localhost:5173", // for local testing
-    ],
-    methods: ["POST", "GET"],
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
