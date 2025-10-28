@@ -49,7 +49,7 @@ import dotenv from "dotenv";
 dotenv.config(); 
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 //Allow your frontend domain only (for security)
 app.use(
@@ -110,6 +110,4 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
